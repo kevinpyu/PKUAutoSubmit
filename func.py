@@ -26,17 +26,17 @@ def login(driver, userName, password, retry=0):
     driver.get('https://portal.pku.edu.cn/portal2017/')
     driver.get(
         f'{iaaaUrl}?appID={appID}&appName={appName}&redirectUrl={redirectUrl}')
-    WebDriverWait(driver, 10).until(
+    WebDriverWait(driver, 5).until(
         EC.visibility_of_element_located((By.ID, 'logon_button')))
     driver.find_element_by_id('user_name').send_keys(userName)
-    time.sleep(10)
+    time.sleep(1)
     driver.find_element_by_id('password').send_keys(password)
-    time.sleep(10)
+    time.sleep(1)
     driver.find_element_by_id('logon_button').click()
-    time.sleep(10)
+    time.sleep(5)
 #     try:
 #         WebDriverWait(driver,
-#                       10).until(EC.visibility_of_element_located((By.ID, 'all')))
+#                       5).until(EC.visibility_of_element_located((By.ID, 'all')))
 #         print('门户登录成功！ ')
 #     except:
 #         print('Retrying...')
