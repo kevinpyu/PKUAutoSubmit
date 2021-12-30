@@ -36,7 +36,7 @@ def login(driver, userName, password, retry=0):
     try:
         WebDriverWait(driver,
                       10).until(EC.visibility_of_element_located((By.ID, 'all')))
-        print('门户登录成功！')
+        print('门户登录成功！ ')
     except:
         print('Retrying...')
         login(driver, userName, password, retry + 1)
