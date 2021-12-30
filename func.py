@@ -161,7 +161,7 @@ def submit(driver):
 #         EC.visibility_of_element_located(
 #             (By.XPATH, '(//button/span[contains(text(),"提交")])[3]')))
     driver.find_element_by_xpath(
-        '(//button/span[contains(text(),"提交")])[3]').click()
+        '(//button/span[contains(text(),"提交")])').click()
     time.sleep(0.1)
 
 
