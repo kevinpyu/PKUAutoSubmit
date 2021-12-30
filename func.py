@@ -33,13 +33,14 @@ def login(driver, userName, password, retry=0):
     driver.find_element_by_id('password').send_keys(password)
     time.sleep(10)
     driver.find_element_by_id('logon_button').click()
-    try:
-        WebDriverWait(driver,
-                      10).until(EC.visibility_of_element_located((By.ID, 'all')))
-        print('门户登录成功！ ')
-    except:
-        print('Retrying...')
-        login(driver, userName, password, retry + 1)
+    time.sleep(10)
+#     try:
+#         WebDriverWait(driver,
+#                       10).until(EC.visibility_of_element_located((By.ID, 'all')))
+#         print('门户登录成功！ ')
+#     except:
+#         print('Retrying...')
+#         login(driver, userName, password, retry + 1)
 
 
 def go_to_simso(driver):
